@@ -25,9 +25,9 @@ import com.developer.chithlal.quiz.util.DefaultConfig
 import com.developer.chithlal.quiz.util.DefaultConfig.Companion.ARG_QUIZ_DATA
 import com.developer.chithlal.quiz.util.DefaultConfig.Companion.ARG_RESULT
 import javax.inject.Inject
-
-
 @Suppress("DEPRECATION")
+
+
 class QuizSessionActivity : AppCompatActivity(),
     QuizSessionContract.View,
     ConnectivityReceiver.ConnectivityChangeListener {
@@ -151,6 +151,17 @@ class QuizSessionActivity : AppCompatActivity(),
             dialog.dismiss()
         }
         builder.show()
+    }
+
+    override fun updateProgressBar(show: Boolean) {
+        if (show) {
+            mBinding.progressBar.visibility = VISIBLE
+            mBinding.buttonStartQuiz.visibility = GONE
+        }
+        else{
+            mBinding.progressBar.visibility = GONE
+            mBinding.buttonStartQuiz.visibility = VISIBLE
+        }
     }
 
     //Setup options and recyclerview

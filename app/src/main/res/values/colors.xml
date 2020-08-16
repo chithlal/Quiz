@@ -9,4 +9,5 @@
     <color name="dark_blue">#263238</color>
     <color name="colorSelected">#00e676</color>
     <color name="red">#d32f2f</color>
+    <color name="orrange">#FF5722</color>
 </resources>

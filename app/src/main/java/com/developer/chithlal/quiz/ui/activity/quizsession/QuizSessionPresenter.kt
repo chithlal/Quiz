@@ -20,6 +20,7 @@ class QuizSessionPresenter(val model: QuizSessionContract.Model) : QuizSessionCo
     private lateinit var answerList: Array<Answer?>
 
     override fun onStartClicked() {
+        view.updateProgressBar(true)
         model.getQuiz(this)
     }
 
@@ -30,6 +31,7 @@ class QuizSessionPresenter(val model: QuizSessionContract.Model) : QuizSessionCo
 
     //When Quiz data loaded from network
     override fun onQuizReady(data: QuizData) {
+        view.updateProgressBar(false)
         view.startQuiz()
         mData = data
         quizList = data.data

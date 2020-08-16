@@ -25,10 +25,10 @@ class RetrofitModule() {
             .client(okHttpClient)
             .build()
 
-   /* @Provides
+    @Provides
     fun provideClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
         OkHttpClient.Builder()
-            .build()*/
+            .build()
     @Provides
     fun provideLoggingIntercepter(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)

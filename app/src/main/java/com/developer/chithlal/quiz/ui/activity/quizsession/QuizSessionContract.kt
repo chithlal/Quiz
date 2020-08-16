@@ -18,6 +18,7 @@ interface QuizSessionContract {
         fun finishQuiz(result: QuizResult)
         fun updateRemainingTime(time:QuizTime)
         fun showDialog(message: String)
+        fun updateProgressBar(show: Boolean)
     }
 
     interface Presenter{
